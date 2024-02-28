@@ -5,11 +5,11 @@ const sql=require("mssql");
 const app=express();
 app.use(express.json());
 app.use(cors());
-
+require('dotenv').config();
 const dbConfig = {
     user: "vidya",
-    password: "123456",
-    server: "VIDYA",
+    password: "vv122004@S",
+    server: "vidya-server.database.windows.net",
     database: "EMS",
     options: {
      // encrypt: true, 
@@ -58,7 +58,7 @@ const dbConfig = {
     }
   })
 
-const port = 5000;
+const port = process.env.PORT ||  5000;
 app.listen(port, ()=>{
     console.log("listening");
 })
